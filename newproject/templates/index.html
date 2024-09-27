@@ -7,6 +7,38 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>Text Utils</title>
+  <style>
+    .bttn {
+      font-size: 0.7rem;
+      padding: 1rem 2.5rem;
+      border: none;
+      outline: none;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: rgb(14, 14, 26);
+      color: rgb(234, 234, 234);
+      font-weight: 800;
+      transition: 0.6s;
+      margin: 0.5rem;
+      box-shadow: 0px 0px 28px #46ec3b;
+      -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+      display: block;
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .bttn:active {
+      scale: 0.92;
+    }
+
+    .bttn:hover {
+      background: rgb(20, 146, 85);
+      background: linear-gradient(270deg, rgba(2, 78, 17, 0.681) 0%, rgba(31, 232, 31, 0.873) 60%);
+      color: rgb(207, 250, 203);
+    }
+  </style>
 </head>
 
 <body>
@@ -48,25 +80,45 @@
         <label for="exampleFormControlTextarea1">Enter your text here and let Text Utils do the magic</label>
         <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
       </div>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
-        <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+          <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+          <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="fulllows" class="custom-control-input" id="customSwitch3">
+          <label class="custom-control-label" for="customSwitch3">lowercase</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch4">
+          <label class="custom-control-label" for="customSwitch4">New Line Remover</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch5">
+          <label class="custom-control-label" for="customSwitch5">Extra Spaces Remover</label>
+        </div>
+        <button type="submit" class="bttn btn-primary mx-2">Analyze</button>
       </div>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
-        <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
-      </div>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch3">
-        <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
-      </div>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch4">
-        <label class="custom-control-label" for="customSwitch4">Extra Spaces Remover</label>
-      </div>
-      <button type="submit" class="btn btn-dark mt-2">Analyze Text</button>
     </form>
   </div>
+  <div class="container my-5">
+    <div class="card text-white bg-dark shadow">
+      <div class="card-header">
+        <h2 class="text-center">Your Analyzed Text</h2>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4">{{ purpose }}</h4>
+        <p class="card-text text-center" style="font-size: 1.2rem; font-weight: 500; color: #a9e34b;">
+          {{ analyzed_text}}
+          </fp>
+      </div>
+    </div>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
