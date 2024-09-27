@@ -78,7 +78,7 @@
     <form action='./' method='get'>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Enter your text here and let Text Utils do the magic</label>
-        <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
+        <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9">{{ analyzed_text }}</textarea>
       </div>
       <div class="d-flex justify-content-center align-items-center flex-wrap">
         <div class="custom-control custom-switch mx-2">
@@ -127,18 +127,6 @@
         <button type="submit" class="bttn btn-primary mx-2">Analyze</button>
       </div>
     </form>
-  </div>
-  <div class="container my-5">
-    <div class="card text-white bg-dark shadow">
-      <div class="card-header">
-        <h2 class="text-center">Your Analyzed Text</h2>
-      </div>
-      <div class="card-body">
-        <p class="card-text text-center" style="font-size: 1.2rem; font-weight: 500; color: #a9e34b;">
-          {{ analyzed_text|safe }}
-          </fp>
-      </div>
-    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
