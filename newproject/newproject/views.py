@@ -9,6 +9,7 @@ def contact(request):
 
 def about(request):
     return render(request , "about.html")
+
 def analyze(request):
     djtext = request.GET.get('text', 'default')
     removepunc=request.GET.get('removepunc','off')
@@ -24,7 +25,14 @@ def analyze(request):
                 analyzed = analyzed + char.upper()
         params = {'purpose': 'All procedures applied', 'analyzed_text': analyzed}
         return render(request, 'analyze.html', params)
-    
+    elif removepunc == "on":
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djtext:
+            if char not in punctuations:
+                analyzed = analyzed + char
+        params = {'purpose': 'Removed Punctuations', 'analyzed_text': analyzed}
+        return render(request, 'analyze.html', params)    
     elif fullcaps=="on":
         analyzed=""
         for char in djtext:
