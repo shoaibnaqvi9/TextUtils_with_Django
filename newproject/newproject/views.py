@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 def index(request):
-    djtext = request.GET.get('text', 'default')
+    djtext = request.GET.get('text', '')
     removepunc=request.GET.get('removepunc','off')
     fullcaps=request.GET.get('fullcaps','off')
     firstcaps=request.GET.get('firstcaps','off')
