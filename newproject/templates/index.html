@@ -75,7 +75,7 @@
     </button>
   </div>
   <div class="container">
-    <form action='/analyze' method='get'>
+    <form action='./' method='get'>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Enter your text here and let Text Utils do the magic</label>
         <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
@@ -90,16 +90,39 @@
           <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
         </div>
         <div class="custom-control custom-switch mx-2">
-          <input type="checkbox" name="fulllows" class="custom-control-input" id="customSwitch3">
-          <label class="custom-control-label" for="customSwitch3">lowercase</label>
+          <input type="checkbox" name="firstcaps" class="custom-control-input" id="customSwitch3">
+          <label class="custom-control-label" for="customSwitch3">First Letter Capital</label>
         </div>
         <div class="custom-control custom-switch mx-2">
-          <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch4">
-          <label class="custom-control-label" for="customSwitch4">New Line Remover</label>
+          <input type="checkbox" name="fulllows" class="custom-control-input" id="customSwitch4">
+          <label class="custom-control-label" for="customSwitch4">lowercase</label>
         </div>
         <div class="custom-control custom-switch mx-2">
-          <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch5">
-          <label class="custom-control-label" for="customSwitch5">Extra Spaces Remover</label>
+          <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch5">
+          <label class="custom-control-label" for="customSwitch5">New Line Remover</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch6">
+          <label class="custom-control-label" for="customSwitch6">Extra Spaces Remover</label>
+        </div>
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="deletetext" class="custom-control-input" id="customSwitch7">
+          <label class="custom-control-label" for="customSwitch7">Delete Text</label>
+        </div>
+        
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="boldtext" class="custom-control-input" id="customSwitch8">
+          <label class="custom-control-label" for="customSwitch8"><b>Bold Text</b></label>
+        </div>
+        
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="italictext" class="custom-control-input" id="customSwitch9">
+          <label class="custom-control-label" for="customSwitch9"><i>Italic Text</i></label>
+        </div>
+        
+        <div class="custom-control custom-switch mx-2">
+          <input type="checkbox" name="underlinetext" class="custom-control-input" id="customSwitch10">
+          <label class="custom-control-label" for="customSwitch10"><u>Underline Text</u></label>
         </div>
         <button type="submit" class="bttn btn-primary mx-2">Analyze</button>
       </div>
@@ -111,9 +134,8 @@
         <h2 class="text-center">Your Analyzed Text</h2>
       </div>
       <div class="card-body">
-        <h4 class="card-title text-center mb-4">{{ purpose }}</h4>
         <p class="card-text text-center" style="font-size: 1.2rem; font-weight: 500; color: #a9e34b;">
-          {{ analyzed_text}}
+          {{ analyzed_text|safe }}
           </fp>
       </div>
     </div>
